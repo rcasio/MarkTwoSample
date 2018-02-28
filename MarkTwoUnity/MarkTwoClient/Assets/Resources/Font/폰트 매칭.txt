@@ -1,0 +1,5 @@
+한국 - Spoqa-Bold
+북미,유럽,베트남 등 - NotoSans-Bold
+태국 - NotoSansThai-Bold
+중국(간체, 번체) - DroidSans
+일본 - Boku2-Bold

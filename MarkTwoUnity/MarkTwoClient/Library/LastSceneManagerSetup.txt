@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/ADScene/MarkTwoSample.unity
+  isLoaded: 1
+  isActive: 1
