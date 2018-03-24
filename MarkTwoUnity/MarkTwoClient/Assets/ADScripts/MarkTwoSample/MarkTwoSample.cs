@@ -23,21 +23,19 @@ public class MarkTwoSample : MonoBehaviour {
     public Text itemName;
     public Text itemTableNum;
     public Text itemPrice;
-    
-    private void Awake()
+
+    IEnumerator Start()
     {
-        new TableLoad();
-        
+        TableLoad tableLoad = new TableLoad();
+        StartCoroutine(tableLoad.Load());
+
+        while (!tableLoad.isLoad)
+        {
+            Debug.Log("테이블 데이터 중입니다. 로드가 끝났는가 ? : " + tableLoad.isLoad);
+            yield return null;
+        }
+
         Debug.Log("테이블 버전 : " + TagManager.Table.PR.TableVersion);
-    }
-
-    void Start()
-    {
-        this.Initialization();
-    }
-
-    private void Initialization()
-    {
         // 테이블 버전
         tableVersion.text = EditText.AddString("테이블 버전  " , TagManager.Table.PR.TableVersion.ToString());
         
